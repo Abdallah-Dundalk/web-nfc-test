@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://glitch.com/favicon.ico">
+
+    <title>Hello Web NFC!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <script src="assets/script.js" defer=""></script>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Web NFC</h1>
+        <p class="lead">
+          <img align="right" style="height: 10em;" src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fqrcode_labs-web-nfc.glitch.me.png?v=1627305167230">
+          Near Field Communication (NFC) enables wireless communication between
+          two devices at close proximity, usually less than a few centimeters.
+          NFC hardware and software (libraries) are well supported on all major
+          mobile platforms (Apple iOS, Android) and <i>native</i> developers
+          were able to use these features for many years. Web NFC now brings
+          these features to the web, which makes it even easier to use NFC
+          features.
+        </p>
+        <p>
+          The official <a href="https://w3c.github.io/web-nfc/">Web NFC spec is here</a> and I've also written a <a href="https://cxlabs.sap.com/2021/07/27/nfc-comes-to-the-web/">small article over at our CX Labs blog</a>.  If you have your mobile
+          around, then simply scan the above QR code to open up this page on your mobile. Have fun! 
+        </p>
+
+        <div class="card" style="margin-top:1em;">
+          <img src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fcheck.png?v=1627303376900" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Web NFC feature test</h5>
+            <div id="not-available" style="display: none;" class="alert alert-warning fade show" role="alert">
+              <strong>Holy guacamole!</strong> Seems like NDEFReader is not
+              available, are you on Android/Chrome?
+            </div>
+            <div id="available" style="display:none;" class="alert alert-success fade show" role="alert">
+              <strong>Well done!</strong> NDEFReader is available and below
+              examples should work.
+            </div>
+            <p class="card-text">
+              Some quick example that will check your browser if all required
+              libraries, mainly the NDEFReader, is available in the global
+              context.
+            </p>
+            <a id="check" class="btn btn-primary">Check</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1em;">
+          <img src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fread.png?v=1627303571419" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Reading tags</h5>
+            <p class="card-text">
+              Some quick example that will read an NFC Tag. The example will
+              also attempt to iterate across all records and read plain text,
+              url and special mime (application/json) records.
+            </p>
+            <div id="readLog" style="display:none;" class="alert alert-info fade show" role="alert"></div>
+            <a id="read" class="btn btn-primary">Read</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1em;">
+          <img src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fwrite.png?v=1627303571308" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Writing tags 1/3</h5>
+            <p class="card-text">
+              Some quick example that will write a simple NDEF text record to a
+              tag.
+            </p>
+            <div id="writeLog" style="display:none;" class="alert alert-info fade show" role="alert"></div>
+            <a id="write" class="btn btn-primary">Write</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1em;">
+          <img src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fwrite.png?v=1627303571308" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Writing tags 2/3</h5>
+            <p class="card-text">
+              Some quick example that will write a NDEF URL record to a tag.
+            </p>
+            <div id="writeUrlLog" style="display:none;" class="alert alert-info fade show" role="alert"></div>
+            <a id="writeUrl" class="btn btn-primary">Write</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:1em;">
+          <img src="https://cdn.glitch.com/0e306929-7e81-44bd-8daf-f019874a772d%2Fwrite.png?v=1627303571308" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Writing tags 3/3</h5>
+            <p class="card-text">
+              Some quick example that will write an Android app record to a tag.
+            </p>
+            <div id="writeAppLog" style="display:none;" class="alert alert-info fade show" role="alert"></div>
+            <a id="writeApp" class="btn btn-primary">Write</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  
+
+</body></html>
