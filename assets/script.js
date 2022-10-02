@@ -86,7 +86,7 @@ document.getElementById("read").addEventListener("click", async () => {
     });
 
     ndef.addEventListener("reading", ({serialNumber }) => {
-      log("readLog", `> Serial Number: ${serialNumber}`);
+      log("readLog", `> Serial Number Plonker: ${serialNumber}`);
       if (serialNumber = "c2:5f:2d:5e") {
         log("Fuck Yes!!!!")
       } else {
