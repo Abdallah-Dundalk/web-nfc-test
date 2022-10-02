@@ -65,6 +65,11 @@ document.getElementById("check").onclick = () => {
 //   }
 // });
 
+let nfcTag = {
+  tagName: ""
+}
+
+
 document.getElementById("read").addEventListener("click", async () => {
   log("readLog", "User clicked scan button");
 
@@ -82,6 +87,9 @@ document.getElementById("read").addEventListener("click", async () => {
 
     ndef.addEventListener("reading", ({serialNumber }) => {
       log("readLog", `> Serial Number: ${serialNumber}`);
+      if (serialNumber = "c2:5f:2d:5e") {
+        log("Fuck Yes!!!!")
+      };
       
 
       // const decoder = new TextDecoder();
