@@ -89,6 +89,8 @@ document.getElementById("read").addEventListener("click", async () => {
       log("readLog", `> Serial Number: ${serialNumber}`);
       if (serialNumber = "c2:5f:2d:5e") {
         log("Fuck Yes!!!!")
+      } else {
+        log("Didn't work")
       };
       
 
