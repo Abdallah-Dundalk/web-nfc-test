@@ -20,50 +20,50 @@ document.getElementById("check").onclick = () => {
   }, 3000);
 };
 
-document.getElementById("write").addEventListener("click", async () => {
-  log("writeLog", "User clicked write button");
+// document.getElementById("write").addEventListener("click", async () => {
+//   log("writeLog", "User clicked write button");
 
-  try {
-    const ndef = new NDEFReader();
-    await ndef.write("Hello Office of the CTO!");
-    log("writeLog", "> Text Message written");
-  } catch (error) {
-    log("writeLog", "Argh! " + error);
-  }
-});
+//   try {
+//     const ndef = new NDEFReader();
+//     await ndef.write("Hello Office of the CTO!");
+//     log("writeLog", "> Text Message written");
+//   } catch (error) {
+//     log("writeLog", "Argh! " + error);
+//   }
+// });
 
-document.getElementById("writeUrl").addEventListener("click", async () => {
-  log("writeUrlLog", "User clicked write button");
+// document.getElementById("writeUrl").addEventListener("click", async () => {
+//   log("writeUrlLog", "User clicked write button");
 
-  const ndef = new NDEFReader();
-  try {
-    await ndef.write({
-      records: [{ recordType: "url", data: "https://cxlabs.sap.com" }]
-    });
-    log("writeUrlLog", "> URl Message written");
-  } catch {
-    log("writeUrlLog", "Argh! " + error);
-  }
-});
+//   const ndef = new NDEFReader();
+//   try {
+//     await ndef.write({
+//       records: [{ recordType: "url", data: "https://cxlabs.sap.com" }]
+//     });
+//     log("writeUrlLog", "> URl Message written");
+//   } catch {
+//     log("writeUrlLog", "Argh! " + error);
+//   }
+// });
 
-document.getElementById("writeApp").addEventListener("click", async () => {
-  log("writeAppLog", "User clicked write button");
+// document.getElementById("writeApp").addEventListener("click", async () => {
+//   log("writeAppLog", "User clicked write button");
 
-  const ndef = new NDEFReader();
-  try {
-    const aarRecord = {
-      recordType: "android.com:pkg",
-      data: encoder.encode("de.rki.coronawarnapp")
-    };
+//   const ndef = new NDEFReader();
+//   try {
+//     const aarRecord = {
+//       recordType: "android.com:pkg",
+//       data: encoder.encode("de.rki.coronawarnapp")
+//     };
 
-    await ndef.write({
-      records: [aarRecord]
-    });
-    log("writeAppLog", "> App Message written");
-  } catch {
-    log("writeAppLog", "Argh! " + error);
-  }
-});
+//     await ndef.write({
+//       records: [aarRecord]
+//     });
+//     log("writeAppLog", "> App Message written");
+//   } catch {
+//     log("writeAppLog", "Argh! " + error);
+//   }
+// });
 
 document.getElementById("read").addEventListener("click", async () => {
   log("readLog", "User clicked scan button");
