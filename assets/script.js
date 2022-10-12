@@ -88,10 +88,10 @@ document.getElementById("read").addEventListener("click", async () => {
       log("readLog", `> Serial Number Plonker: ${serialNumber}`);
       if (serialNumber = "c2:5f:2d:5e") {
         log("readLog", "Fuck Yes string !!!!")
-        document.getElementById("serial-number").value = "Johnny Bravo";
+        document.getElementById("serial-number").setAttribute('value', serialNumber);
       } else {
         log("readLog", "Didn't work")
-        document.getElementById("serial-number").value = "Johnny Bravo";
+        document.getElementById("serial-number").setAttribute('value', serialNumber);
       };
       
 
