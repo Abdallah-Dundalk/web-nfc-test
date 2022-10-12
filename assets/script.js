@@ -67,7 +67,33 @@ document.getElementById("check").onclick = () => {
 // });
 
 
+var locationDisplay = getElementById("location-coordinates");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.getElementById("location-coordinates").setAttribute('value', "Geoloacation is not supported by this browser");
+  }
+}
 
+
+function showPosition(position) {
+  
+  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+  "Longitude: " + position.coords.longitude);
+  
+}
+
+
+function dateStamp() {
+  document.getElementById('todays-date').valueAsDate = new Date();
+}
+
+function timeStamp() {
+const now = new Date();
+const current = now.getHours() + ":" + now.getMinutes();
+document.getElementById("time-stamp").value = current;
+}
 
 document.getElementById("read").addEventListener("click", async () => {
   log("readLog", "User clicked scan button");
@@ -89,6 +115,8 @@ document.getElementById("read").addEventListener("click", async () => {
       if (serialNumber = "c2:5f:2d:5e") {
         log("readLog", "Fuck Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', serialNumber);
+        document.getElementById("location-coordinates").setAttribute('value', serialNumber);
+        
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', serialNumber);
