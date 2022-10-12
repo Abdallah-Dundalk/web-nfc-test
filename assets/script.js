@@ -115,7 +115,7 @@ document.getElementById("read").addEventListener("click", async () => {
       if (serialNumber = "c2:5f:2d:5e") {
         log("readLog", "Fuck Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', serialNumber);
-        document.getElementById("location-coordinates").setAttribute('value', serialNumber);
+        
         
       } else {
         log("readLog", "Didn't work")
