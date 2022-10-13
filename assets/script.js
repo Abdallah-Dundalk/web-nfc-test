@@ -114,10 +114,10 @@ document.getElementById("read").addEventListener("click", async () => {
       log("readLog", `> Go on then: ${serialNumber}`);
       if ({serialNumber }) {
         log("readLog", "wow Yes string !!!!")
-        document.getElementById("serial-number").setAttribute('value', {serialNumber });
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
       } else {
         log("readLog", "Didn't work")
-        document.getElementById("serial-number").setAttribute('value', {serialNumber });
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
       };
       
 
