@@ -89,11 +89,11 @@ document.getElementById("check").onclick = () => {
 //   document.getElementById('todays-date').valueAsDate = new Date();
 // }
 
-// function timeStamp() {
-// const now = new Date();
-// const current = now.getHours() + ":" + now.getMinutes();
-// document.getElementById("time-stamp").value = current;
-// }
+function timeStamp() {
+const now = new Date();
+const current = now.getHours() + ":" + now.getMinutes();
+document.getElementById("time-stamp").value = current;
+}
 
 document.getElementById("read").addEventListener("click", async () => {
   log("readLog", "User clicked scan button");
@@ -113,8 +113,9 @@ document.getElementById("read").addEventListener("click", async () => {
     ndef.addEventListener("reading", ({serialNumber }) => {
       log("readLog", `> Go on then: ${serialNumber}`);
       if ({serialNumber }) {
-        log("readLog", "wow Yes string !!!!")
+        log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+        timeStamp()
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
