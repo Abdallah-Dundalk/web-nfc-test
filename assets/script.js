@@ -68,6 +68,7 @@ document.getElementById("check").onclick = () => {
 
 
 var locationDisplay = getElementById("location-coordinates");
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -116,7 +117,7 @@ document.getElementById("read").addEventListener("click", async () => {
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
         timeStamp()
         getLocation()
-        showPosition(position)
+        // showPosition(position)
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
