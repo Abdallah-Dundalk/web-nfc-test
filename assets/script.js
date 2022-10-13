@@ -85,14 +85,15 @@ document.getElementById("check").onclick = () => {
 // }
 
 
-function dateStamp() {
-  document.getElementById('todays-date').valueAsDate = new Date();
-}
+// function dateStamp() {
+//   document.getElementById('todays-date').valueAsDate = new Date();
+// }
 
 function timeStamp() {
 const now = new Date();
 const current = now.getHours() + ":" + now.getMinutes();
 document.getElementById("time-stamp").value = current;
+document.getElementById('todays-date').valueAsDate = now;
 }
 
 document.getElementById("read").addEventListener("click", async () => {
@@ -116,7 +117,7 @@ document.getElementById("read").addEventListener("click", async () => {
         log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
         timeStamp()
-        dateStamp()
+        // dateStamp()
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
