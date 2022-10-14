@@ -120,9 +120,8 @@ document.getElementById("read").addEventListener("click", async () => {
         log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
         timeStamp()
-        // success(position)
-        // getLocation()
-        // showPosition(position)
+        getLocation()
+        showPosition(position)
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
