@@ -99,34 +99,34 @@ document.getElementById("time-stamp").value = current;
 document.getElementById('todays-date').valueAsDate = now;
 }
 
-// document.getElementById("read").addEventListener("click", async () => {
-//   log("readLog", "User clicked scan button");
+document.getElementById("read").addEventListener("click", async () => {
+  log("readLog", "User clicked scan button");
 
-//   try {
-//     const ndef = new NDEFReader();
-//     await ndef.scan();
-//     log("readLog", "> Scan started");
+  try {
+    const ndef = new NDEFReader();
+    await ndef.scan();
+    log("readLog", "> Scan started");
 
-//     ndef.addEventListener("readingerror", () => {
-//       log(
-//         "readLog",
-//         "Argh! Cannot read data from the NFC tag. Try another one?"
-//       );
-//     });
+    ndef.addEventListener("readingerror", () => {
+      log(
+        "readLog",
+        "Argh! Cannot read data from the NFC tag. Try another one?"
+      );
+    });
 
-//     ndef.addEventListener("reading", ({serialNumber }) => {
-//       log("readLog", `> Go on then: ${serialNumber}`);
-//       if ({serialNumber }) {
-//         log("readLog", "time stamp Yes string !!!!")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//         timeStamp()
-//         // success(position)
-//         // getLocation()
-//         // showPosition(position)
-//       } else {
-//         log("readLog", "Didn't work")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//       };
+    ndef.addEventListener("reading", ({serialNumber }) => {
+      log("readLog", `> Go on then: ${serialNumber}`);
+      if ({serialNumber }) {
+        log("readLog", "time stamp Yes string !!!!")
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+        timeStamp()
+        // success(position)
+        // getLocation()
+        // showPosition(position)
+      } else {
+        log("readLog", "Didn't work")
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+      };
       
 
       // const decoder = new TextDecoder();
@@ -156,8 +156,8 @@ document.getElementById('todays-date').valueAsDate = now;
       //       log("readLog", `Record not handled`);
       //   }
       // }
-//     });
-//   } catch (error) {
-//     log("readLog", "Argh! " + error);
-//   }
-// });
+    });
+  } catch (error) {
+    log("readLog", "Argh! " + error);
+  }
+});
