@@ -21,23 +21,23 @@
 // };
 
 
-// var locationDisplay = getElementById("location-coordinates");
+var locationDisplay = getElementById("location-coordinates");
 
-// function getLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition);
-//   } else {
-//     document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
-//   }
-// }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
+  }
+}
 
 
-// function showPosition(position) {
+function showPosition(position) {
   
-//   document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
-//   "Longitude: " + position.coords.longitude);
+  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+  "Longitude: " + position.coords.longitude);
   
-// }
+}
 
 
 function timeStamp() {
@@ -62,15 +62,15 @@ document.getElementById('todays-date').valueAsDate = now;
 //       );
 //     });
 
-//     ndef.addEventListener("reading", ({serialNumber }) => {
-//       log("readLog", `> Go on then: ${serialNumber}`);
-//       if ({serialNumber }) {
-//         log("readLog", "time stamp Yes string !!!!")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//       } else {
-//         log("readLog", "Didn't work")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//       };
+    // ndef.addEventListener("reading", ({serialNumber }) => {
+    //   log("readLog", `> Go on then: ${serialNumber}`);
+    //   if ({serialNumber }) {
+    //     log("readLog", "time stamp Yes string !!!!")
+    //     document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+    //   } else {
+    //     log("readLog", "Didn't work")
+    //     document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+    //   };
       
 
       // const decoder = new TextDecoder();
@@ -151,11 +151,13 @@ document.getElementById("read").addEventListener("click", async () => {
     });
 
     ndef.addEventListener("reading", ({ message, serialNumber }) => {
-      log("readLog", `> Serial Number: ${serialNumber}`);
-      log("readLog", `> Records: (${message.records.length})`);
-      timeStamp();
-      // getLocation(); 
-      // timeStamp();
+      log("readLog", `> Go on then: ${serialNumber}`);
+      if ({serialNumber }) {
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+      } else {
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+      };
+      
 
       const decoder = new TextDecoder();
       for (const record of message.records) {
