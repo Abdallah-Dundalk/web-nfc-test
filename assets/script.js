@@ -72,17 +72,17 @@ document.getElementById("check").onclick = () => {
 // }
 
 
-// // time stamp code----------------------------------------------------------------------------------------------------*
+// time stamp code----------------------------------------------------------------------------------------------------*
 
-// function timeStamp() {
-// const now = new Date();
-// const current = now.getHours() + ":" + now.getMinutes();
-// document.getElementById("time-stamp").value = current;
-// document.getElementById('todays-date').valueAsDate = now;
-// }
+function timeStamp() {
+const now = new Date();
+const current = now.getHours() + ":" + now.getMinutes();
+document.getElementById("time-stamp").value = current;
+document.getElementById('todays-date').valueAsDate = now;
+}
 
 
-// original nfc code----------------------------------------------------------------------------------------------------------*
+// my update nfc code----------------------------------------------------------------------------------------------------------*
 
 document.getElementById("read").addEventListener("click", async () => {
   log("readLog", "User clicked scan button");
@@ -104,6 +104,7 @@ document.getElementById("read").addEventListener("click", async () => {
       if ({serialNumber }) {
         log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+        timeStamp();
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
