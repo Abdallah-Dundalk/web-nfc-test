@@ -111,27 +111,27 @@ document.getElementById('todays-date').valueAsDate = now;
 
 
 
-console.log("ready. go change the world.");
+// console.log("ready. go change the world.");
 
-const log = function(id, txt) {
-  document.getElementById(id).style.display = "block";
-  let p = document.createElement("p");
-  p.textContent = txt;
-  document.getElementById(id).append(p);
-};
+// const log = function(id, txt) {
+//   document.getElementById(id).style.display = "block";
+//   let p = document.createElement("p");
+//   p.textContent = txt;
+//   document.getElementById(id).append(p);
+// };
 
-document.getElementById("check").onclick = () => {
-  if ("NDEFReader" in window) {
-    document.getElementById("available").style.display = "block";
-  } else {
-    document.getElementById("not-available").style.display = "block";
-  }
+// document.getElementById("check").onclick = () => {
+//   if ("NDEFReader" in window) {
+//     document.getElementById("available").style.display = "block";
+//   } else {
+//     document.getElementById("not-available").style.display = "block";
+//   }
 
-  setTimeout(() => {
-    document.getElementById("not-available").style.display = "none";
-    document.getElementById("available").style.display = "none";
-  }, 3000);
-};
+//   setTimeout(() => {
+//     document.getElementById("not-available").style.display = "none";
+//     document.getElementById("available").style.display = "none";
+//   }, 3000);
+// };
 
 
 
