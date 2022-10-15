@@ -64,12 +64,12 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
+// function showPosition(position) {
   
-  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
-  "Longitude: " + position.coords.longitude);
+//   document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+//   "Longitude: " + position.coords.longitude);
   
-}
+// }
 
 
 // time stamp code----------------------------------------------------------------------------------------------------*
