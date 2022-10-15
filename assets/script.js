@@ -71,6 +71,35 @@ document.getElementById("read").addEventListener("click", async () => {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
       };
+      
+
+      // const decoder = new TextDecoder();
+      // for (const record of message.records) {
+      //   switch (record.recordType) {
+      //     case "text":
+      //       const textDecoder = new TextDecoder(record.encoding);
+      //       log(
+      //         "readLog",
+      //         `Text: ${textDecoder.decode(record.data)} (${record.lang})`
+      //       );
+      //       break;
+      //     case "url":
+      //       log("readLog", `URL: ${decoder.decode(record.data)}`);
+      //       break;
+      //     case "mime":
+      //       if (record.mediaType === "application/json") {
+      //         log(
+      //           "readLog",
+      //           `JSON: ${JSON.parse(decoder.decode(record.data))}`
+      //         );
+      //       } else {
+      //         log("readLog", `Media not handled`);
+      //       }
+      //       break;
+      //     default:
+      //       log("readLog", `Record not handled`);
+      //   }
+      // }
     });
   } catch (error) {
     log("readLog", "Argh! " + error);
