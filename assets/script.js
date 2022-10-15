@@ -36,15 +36,15 @@ document.getElementById("check").onclick = () => {
 //       );
 //     });
 
-//     ndef.addEventListener("reading", ({serialNumber }) => {
-//       log("readLog", `> Go on then: ${serialNumber}`);
-//       if ({serialNumber }) {
-//         log("readLog", "time stamp Yes string !!!!")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//       } else {
-//         log("readLog", "Didn't work")
-//         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-//       };
+    // ndef.addEventListener("reading", ({serialNumber }) => {
+    //   log("readLog", `> Go on then: ${serialNumber}`);
+    //   if ({serialNumber }) {
+    //     log("readLog", "time stamp Yes string !!!!")
+    //     document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+    //   } else {
+    //     log("readLog", "Didn't work")
+    //     document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+    //   };
       
 //     });
 //   } catch (error) {
@@ -99,9 +99,15 @@ document.getElementById("read").addEventListener("click", async () => {
       );
     });
 
-    ndef.addEventListener("reading", ({ message, serialNumber }) => {
-      log("readLog", `> Serial Number: ${serialNumber}`);
-      log("readLog", `> Records: (${message.records.length})`);
+    ndef.addEventListener("reading", ({serialNumber }) => {
+      log("readLog", `> Go on then: ${serialNumber}`);
+      if ({serialNumber }) {
+        log("readLog", "time stamp Yes string !!!!")
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+      } else {
+        log("readLog", "Didn't work")
+        document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
+      };
 
       const decoder = new TextDecoder();
       for (const record of message.records) {
