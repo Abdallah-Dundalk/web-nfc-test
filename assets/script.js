@@ -153,6 +153,9 @@ document.getElementById("read").addEventListener("click", async () => {
     ndef.addEventListener("reading", ({ message, serialNumber }) => {
       log("readLog", `> Serial Number: ${serialNumber}`);
       log("readLog", `> Records: (${message.records.length})`);
+      timeStamp();
+      getLocation(); 
+      timeStamp();
 
       const decoder = new TextDecoder();
       for (const record of message.records) {
