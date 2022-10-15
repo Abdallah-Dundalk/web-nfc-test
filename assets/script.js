@@ -64,12 +64,12 @@ function getLocation() {
   }
 }
 
-// function showPosition(position) {
+function showPosition(position) {
   
-//   document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
-//   "Longitude: " + position.coords.longitude);
+  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+  "Longitude: " + position.coords.longitude);
   
-// }
+}
 
 
 // time stamp code----------------------------------------------------------------------------------------------------*
@@ -106,7 +106,7 @@ document.getElementById("read").addEventListener("click", async () => {
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
         timeStamp();
         getLocation();
-        // showPosition(position);
+        showPosition(position);
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
