@@ -21,23 +21,23 @@
 // };
 
 
-var locationDisplay = getElementById("location-coordinates");
+// var locationDisplay = getElementById("location-coordinates");
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
-  }
-}
+// function getLocation() {
+//   if (navigator.geolocation) {
+//     navigator.geolocation.getCurrentPosition(showPosition);
+//   } else {
+//     document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
+//   }
+// }
 
 
-function showPosition(position) {
+// function showPosition(position) {
   
-  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
-  "Longitude: " + position.coords.longitude);
+//   document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+//   "Longitude: " + position.coords.longitude);
   
-}
+// }
 
 
 function timeStamp() {
@@ -154,8 +154,8 @@ document.getElementById("read").addEventListener("click", async () => {
       log("readLog", `> Serial Number: ${serialNumber}`);
       log("readLog", `> Records: (${message.records.length})`);
       timeStamp();
-      getLocation(); 
-      timeStamp();
+      // getLocation(); 
+      // timeStamp();
 
       const decoder = new TextDecoder();
       for (const record of message.records) {
