@@ -53,23 +53,23 @@ document.getElementById("check").onclick = () => {
 // });
 
 
-//locatation code ---------------------------------------------------------------------------------------------------*
-// var locationDisplay = getElementById("location-coordinates");
+// locatation code ---------------------------------------------------------------------------------------------------*
+var locationDisplay = getElementById("location-coordinates");
 
-// function getLocation() {
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(showPosition);
-//   } else {
-//     document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
-//   }
-// }
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    document.getElementById("location-coordinates").setAttribute('value', "Geolocation is not supported by this browser");
+  }
+}
 
-// function showPosition(position) {
+function showPosition(position) {
   
-//   document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
-//   "Longitude: " + position.coords.longitude);
+  document.getElementById("location-coordinates").setAttribute('value', "Latitude: " + position.coords.latitude +
+  "Longitude: " + position.coords.longitude);
   
-// }
+}
 
 
 // time stamp code----------------------------------------------------------------------------------------------------*
@@ -105,6 +105,7 @@ document.getElementById("read").addEventListener("click", async () => {
         log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
         timeStamp();
+        getLocation()
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
