@@ -104,9 +104,9 @@ document.getElementById("read").addEventListener("click", async () => {
       if ({serialNumber }) {
         log("readLog", "time stamp Yes string !!!!")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
-        timeStamp();
-        getLocation();
-        showPosition(position);
+        // timeStamp();
+        // getLocation();
+        // showPosition(position);
       } else {
         log("readLog", "Didn't work")
         document.getElementById("serial-number").setAttribute('value', `${serialNumber }`);
